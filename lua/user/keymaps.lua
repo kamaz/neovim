@@ -56,10 +56,18 @@ keymap("v", ">", ">gv", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope
-keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
-keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
-keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
-keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
+-- keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
+-- keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
+-- keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
+-- keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
+local telescope_builtin = require('telescope.builtin')
+keymap('n', '<leader>sf', telescope_builtin.find_files, { desc = '[S]earch [F]iles' })
+keymap('n', '<leader>sh', telescope_builtin.help_tags, { desc = '[S]earch [H]elp' })
+keymap('n', '<C-p>', telescope_builtin.git_files, { desc = '[S]earch' })
+keymap('n', '<leader>sw', telescope_builtin.grep_string, { desc = '[S]earch current [W]ord' })
+keymap('n', '<leader>sg', telescope_builtin.live_grep, { desc = '[S]earch by [G]rep' })
+keymap('n', '<leader>sd', telescope_builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
+keymap('n', '<leader>sp', ":Telescope projects<CR>", { desc = '[S]earch [P]rojects' })
 
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
@@ -81,3 +89,14 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
+
+
+-- Make file executable
+keymap("n", "<leader>x", "<cmd>!chmod +x%<CR>", opts)
+
+-- Keep the cursor at the beginning of line
+keymap("n", "J", "mzJ`z")
+
+-- Undotree
+keymap("n", "<leader>u", vim.cmd.UndotreeToggle)
+

@@ -38,3 +38,26 @@ function _LAZYGIT_TOGGLE()
 	lazygit:toggle()
 end
 
+local node = Terminal:new { cmd = "node", hidden = true }
+
+function _NODE_TOGGLE()
+	node:toggle()
+end
+
+local python = Terminal:new { cmd = "python", hidden = true }
+
+function _PYTHON_TOGGLE()
+  python:toggle()
+end
+
+-- local cargo_run = Terminal:new { cmd = "cargo run", hidden = true }
+--
+-- function _CARGO_RUN()
+-- cargo_run:toggle()
+-- end
+--
+-- local cargo_test = Terminal:new { cmd = "cargo test", hidden = true }
+--
+-- function _CARGO_TEST()
+-- cargo_test:toggle()
+-- end
