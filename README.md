@@ -192,3 +192,8 @@ You can install new plugins here: [plugins](https://github.com/LunarVim/nvim-bas
 > The computing scientist's main challenge is not to get confused by the complexities of his own making.
 
 \- Edsger W. Dijkstra
+
+## Resources 
+
+- [LunarVim core plugin list](https://www.lunarvim.org/docs/plugins/core-plugins-list)
+- [ChristianChiarulli list of plugins](https://github.com/ChristianChiarulli/nvim/)
