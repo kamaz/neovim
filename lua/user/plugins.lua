@@ -85,7 +85,23 @@ return packer.startup(function(use)
   use { "RRethy/vim-illuminate" }
 
   -- Telescope
-  use { "nvim-telescope/telescope.nvim" }
+  use { 
+    "nvim-telescope/telescope.nvim",
+  requires = {
+      { "nvim-lua/popup.nvim" },
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-telescope/telescope-fzy-native.nvim" },
+      { "nvim-telescope/telescope-frecency.nvim" },
+      { "nvim-telescope/telescope-dap.nvim" },
+      { "nvim-telescope/telescope-media-files.nvim" },
+      { "nvim-telescope/telescope-project.nvim" },
+      { "nvim-telescope/telescope-packer.nvim" },
+      { "nvim-telescope/telescope-symbols.nvim" },
+      { "nvim-telescope/telescope-vimspector.nvim" },
+      { "nvim-telescope/telescope-z.nvim" },
+      { "nvim-telescope/telescope-github.nvim" },
+    },
+  }
 
   -- Treesitter
   use { "nvim-treesitter/nvim-treesitter" }
@@ -140,6 +156,9 @@ return packer.startup(function(use)
 
   -- Colour my parentheses
   use { "p00f/nvim-ts-rainbow" }
+
+  -- Octo GH integration
+  use { "pwntester/octo.nvim" }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
