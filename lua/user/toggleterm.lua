@@ -50,6 +50,12 @@ function _PYTHON_TOGGLE()
   python:toggle()
 end
 
+local terraform = Terminal:new { cmd = "terraform console", hidden = true }
+
+function _TERRAFORM_TOGGLE()
+  terraform:toggle()
+end
+
 -- local cargo_run = Terminal:new { cmd = "cargo run", hidden = true }
 --
 -- function _CARGO_RUN()
