@@ -62,13 +62,14 @@ keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 -- keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 -- keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 local telescope_builtin = require('telescope.builtin')
-keymap('n', '<leader>sf', telescope_builtin.find_files, { desc = '[S]earch [F]iles' })
-keymap('n', '<leader>sh', telescope_builtin.help_tags, { desc = '[S]earch [H]elp' })
+keymap('n', '<leader>sf', telescope_builtin.find_files, { desc = '[S]earch [f]iles' })
+keymap('n', '<leader>sh', telescope_builtin.help_tags, { desc = '[S]earch [h]elp' })
 keymap('n', '<C-p>', telescope_builtin.git_files, { desc = '[S]earch' })
-keymap('n', '<leader>sw', telescope_builtin.grep_string, { desc = '[S]earch current [W]ord' })
-keymap('n', '<leader>sg', telescope_builtin.live_grep, { desc = '[S]earch by [G]rep' })
-keymap('n', '<leader>sd', telescope_builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
-keymap('n', '<leader>sp', ":Telescope projects<CR>", { desc = '[S]earch [P]rojects' })
+keymap('n', '<leader>sw', telescope_builtin.grep_string, { desc = '[S]earch current [w]ord' })
+keymap('n', '<leader>sg', telescope_builtin.live_grep, { desc = '[S]earch by [g]rep' })
+keymap('n', '<leader>sG', telescope_builtin.live_grep, { desc = '[S]earch by [G]ist' })
+keymap('n', '<leader>sd', telescope_builtin.diagnostics, { desc = '[S]earch [d]iagnostics' })
+keymap('n', '<leader>sp', ":Telescope projects<CR>", { desc = '[S]earch [p]rojects' })
 
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
@@ -101,3 +102,14 @@ keymap("n", "J", "mzJ`z")
 -- Undotree
 keymap("n", "<leader>u", vim.cmd.UndotreeToggle)
 
+-- Move lines in visual mode
+keymap("v", "J", ":m '>+1<CR>gv=gv")
+keymap("v", "K", ":m '<-2<CR>gv=gv")
+
+-- When scrolling keep cursor in the middle
+keymap("n", "<C-d>", "<C-d>zz")
+keymap("n", "<C-u>", "<C-u>zz")
+
+-- When searching keep search terms in the middle
+keymap("n", "n", "nzzzv")
+keymap("n", "N", "Nzzzv")
