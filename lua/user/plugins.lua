@@ -109,6 +109,9 @@ return packer.startup(function(use)
   -- filetypes
   use "nathom/filetype.nvim"
 
+  -- surround
+  use "kylechui/nvim-surround"
+
   -- Copilot
   use { "zbirenbaum/copilot.lua",
 		event = { "VimEnter" },
